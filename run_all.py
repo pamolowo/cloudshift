@@ -2,7 +2,7 @@
 
 import subprocess, datetime, os
 
-os.chdir(os.path.expanduser("/home/ubuntu"))
+os.chdir(os.path.expanduser("~/cloudshift"))
 
 print("=== Toolkit run", datetime.datetime.now(), "===")
 
