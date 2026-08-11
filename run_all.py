@@ -2,7 +2,9 @@
 
 import subprocess, datetime, os
 
-os.chdir(os.path.expanduser("/home/ubuntu/cloud_shift"))
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+os.chdir(BASE_DIR)
 
 print("=== Toolkit run", datetime.datetime.now(), "===")
 
