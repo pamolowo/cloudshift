@@ -4,15 +4,20 @@ pipeline {
     stages {
         stage('Build & Test') {
             steps {
-                sh 'pip install pytest'
-                sh 'pytest test_backup.py'
+                sh '''
+                    python3 -m venv .venv
+                    .venv/bin/python -m pip install --upgrade pip
+                    .venv/bin/python -m pip install pytest
+                    .venv/bin/python -m pytest test_backup.py
+                '''
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'git pull'
-                sh 'python3 run_all.py'
+                sh '''
+                    python3 run_all.py
+                '''
             }
         }
     }
